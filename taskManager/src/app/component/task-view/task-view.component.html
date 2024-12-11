@@ -6,12 +6,14 @@
             </h1>
 
             <div class="list-menu">
-                <a class="list-menu-item">
-                    <p>List #1</p>
+
+                <a class="list-menu-item" *ngFor="let list of lists" [routerLink]="['/lists', list._id]" routerLinkActive="is-active">
+                    <p>{{ list.title }}</p>
                 </a>
+
             </div>
 
-            <button class="button is-primary has-text-white" (click)="createNewList()">+ New List</button>
+            <button class="button is-primary has-text-white" routerLink="/new-list">+ New List</button>
         </div>
         <div class="task-list-container has-background-light">
             <h1 class="title has-text-primary">
@@ -19,9 +21,17 @@
             </h1>
 
             <!-- Task Elements -->
-             <div class="task">
-                <p>This is something I have to do</p>
+             <div class="task" *ngFor="let task of tasks" (click)="onTaskClick(task)" [ngClass]="{'completed': task.completed}">
+                <div class="task-text">
+                    <p>{{ task.title }}</p>
+                </div>
              </div>
+
+             <button class="circle-add-button button is-primary" routerLink="./new-task">
+                <span class="icon is-small">
+                    <i class="fas fa-plus fa-beat" style="--fa-animation-duration: 2s; color: white;" aria-hidden="true"></i>
+                </span>
+            </button>
         </div>
     </div>
 </div>

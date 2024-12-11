@@ -7,7 +7,16 @@ $green: #27d7a1;
 $light-green: #45f69e;
 $dark-green: rgb(0, 100, 80);
 $light: #f8f8f8;
-$sans-serif: "Nunito", sans-serif;
+
+$family-sans-serif: "Nunito", sans-serif;
+
+$primary: $green;
+
+$link: $turquoise;
+
+$control-border-width: 2px;
+$input-border-color: transparent;
+$input-shadow: none;
 
 // Set global styles
 html {
@@ -16,7 +25,6 @@ html {
 
 body {
   background: linear-gradient(to right top, $turquoise, $green);
-  font-family: $sans-serif, sans-serif;
   height: 100%;
 }
 
@@ -38,7 +46,7 @@ body {
 }
 
 .title {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Lato';
   font-size: 24px;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -50,10 +58,4 @@ body {
   border-radius: 5px;
   width: 350px;
   max-width: 350px;
-}
-
-// Input and control styles
-input {
-  border: 2px solid transparent;
-  box-shadow: none;
 }
